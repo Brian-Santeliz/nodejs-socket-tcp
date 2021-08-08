@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-sockets-tcp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {},
+  "keywords": [
+    "Nodejs",
+    "Socket",
+    "TCP"
+  ],
+  "author": "Brian Santeliz",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

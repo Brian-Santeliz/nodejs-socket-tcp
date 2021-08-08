@@ -1,16 +1,24 @@
 const { Server } = require('net');
-const HOST = "0.0.0.0";
+const HOST = '0.0.0.0';
 
-const error = (message) => {
-  console.log(message);
+const error = (msg) => {
+  console.log(msg);
   process.exit(1);
 };
 
 const initSocket = (port) => {
   const server = new Server();
-  server.listen({port, host:HOST}, () => {
-    console.log(`Listening on port ${port}`);
-  })
+
+  server.on('connection', (socket) => {
+    socket.on('close', () => {
+      console.log(`Disconected: ${socket}`);
+    });
+  });
+  server.listen({ port, host: HOST }, () => {
+    console.log(`Listening on port ${port} and ${HOST}`);
+  });
+
+  server.on('error', (err) => error(err.message));
 };
 
 const runServer = () => {
