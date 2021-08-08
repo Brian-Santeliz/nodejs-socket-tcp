@@ -46,13 +46,13 @@ const connectToSocket = (host, port) => {
 const runClient = () => {
   if (process.argv.length !== 4) {
     error(
-      `Argumentos incorrectos. Debe ser: Obejeto de  Node, ${process.argv[1]}, Host & Puerto`
+      `Wrong arguments. Must send the host and port of socket server listening`
     );
   }
   let port = process.argv[3];
   const host = process.argv[2];
   if (isNaN(port)) {
-    error('El puerto debe ser un número.');
+    error('The port must be number type.');
   }
   port = Number(port);
 

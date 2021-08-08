@@ -61,12 +61,12 @@ const initSocket = (port) => {
 const runServer = () => {
   if (process.argv.length !== 3) {
     error(
-      `Argumentos incorrectos. Debe ser: Obejeto de  Node, ${process.argv[1]} & Puerto`
+      `Wrong arguments. Must send the port for socket server`
     );
   }
   let port = process.argv[2];
   if (isNaN(port)) {
-    error('El puerto debe ser un número.');
+    error('The port must be number type.');
   }
   port = Number(port);
   initSocket(port);
